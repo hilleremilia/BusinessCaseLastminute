@@ -1,10 +1,6 @@
-import { SafeAreaView, Text } from 'react-native';
-import * as React from 'react';
+import React from 'react';
+import { HotelsList } from '../components/HotelsList.tsx';
 
 export const HomeScreen = () => {
-  return (
-    <SafeAreaView>
-      <Text>Home Screen</Text>
-    </SafeAreaView>
-  );
+  return <HotelsList />;
 };

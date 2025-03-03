@@ -4,7 +4,12 @@ import { HomeScreen } from '../screens/HomeScreen.tsx';
 
 const RootStack = createNativeStackNavigator({
   screens: {
-    Home: HomeScreen,
+    Home: {
+      screen: HomeScreen,
+      options: {
+        headerShown: false,
+      },
+    },
   },
 });
 
