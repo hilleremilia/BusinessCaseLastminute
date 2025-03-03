@@ -1,8 +1,8 @@
-import React from 'react';
-import { View } from 'react-native';
+import * as React from 'react';
+import { Navigation } from './navigation/intex.tsx';
 
-function App(): React.JSX.Element {
-  return <View />;
-}
+const App = () => {
+  return <Navigation />;
+};
 
 export default App;
