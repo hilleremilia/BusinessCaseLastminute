@@ -1,3 +1,5 @@
+# Mobile Coding Exercise
+
 This is a Mobile Coding Exercise App which displays the list and the details of the hotels.
 
 It contains 2 screens.
