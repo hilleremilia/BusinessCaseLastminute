@@ -32,8 +32,8 @@ export const HotelDetails = ({ hotel }: Props) => {
           </View>
           <View>
             <Text variant="bodySmall">Check Out</Text>
-            <Text variant="bodyMedium">From {hotel?.checkIn?.from}</Text>
-            <Text variant="bodyMedium">To {hotel?.checkIn?.to}</Text>
+            <Text variant="bodyMedium">From {hotel?.checkOut?.from}</Text>
+            <Text variant="bodyMedium">To {hotel?.checkOut?.to}</Text>
           </View>
         </Card.Content>
         <Divider style={theme.divider} />
