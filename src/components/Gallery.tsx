@@ -1,6 +1,6 @@
 import React from 'react';
 import { Linking, StyleSheet } from 'react-native';
-import { Button, Card, Snackbar } from 'react-native-paper';
+import { Button, Card, Snackbar, Portal } from 'react-native-paper';
 import { Hotel } from '../types/hotel.ts';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const Gallery = ({ gallery = [] }: Props) => {
-  const [error, setError] = React.useState(false);
+  const [error, setError] = React.useState(true);
 
   const onDismissSnackBar = () => setError(false);
 
@@ -24,9 +24,11 @@ export const Gallery = ({ gallery = [] }: Props) => {
 
   return (
     <>
-      <Snackbar visible={error} onDismiss={onDismissSnackBar}>
-        Cannot open url.
-      </Snackbar>
+      <Portal>
+        <Snackbar visible={error} onDismiss={onDismissSnackBar}>
+          Cannot open url.
+        </Snackbar>
+      </Portal>
       <Card.Content style={styles.images}>
         {gallery?.map((url, index) => (
           <Button onPress={() => handlePress(url)} key={url} mode="text">
