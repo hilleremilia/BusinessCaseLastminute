@@ -13,7 +13,6 @@ interface Props {
 
 export const HotelListItem = ({ hotel }: Props) => {
   const theme = useTheme<Theme>();
-  const styles = makeStyles(theme);
   const navigation = useNavigation<HomeScreenNavigationProps>();
 
   const handleSeeMoreClick = () => navigation.navigate('Details', { hotel });
@@ -25,14 +24,14 @@ export const HotelListItem = ({ hotel }: Props) => {
         subtitle={`Rated ${hotel?.userRating}`}
         right={() => (hotel?.stars ? <Stars stars={hotel?.stars} /> : null)}
       />
-      <Divider style={styles.divider} />
+      <Divider style={theme.divider} />
       <Card.Content>
         <Text variant="bodySmall">Price</Text>
         <Text variant="bodyMedium">
           {hotel?.price} {hotel?.currency}
         </Text>
       </Card.Content>
-      <Divider style={styles.divider} />
+      <Divider style={theme.divider} />
       <Card.Content>
         <Text variant="bodySmall">Address</Text>
         <Text variant="bodyMedium">{hotel?.location?.address}</Text>
@@ -52,18 +51,12 @@ export const HotelListItem = ({ hotel }: Props) => {
   );
 };
 
-const makeStyles = (theme: Theme) =>
-  StyleSheet.create({
-    card: {
-      backgroundColor: theme.colors.backgroundDark,
-      marginBottom: 24,
-    },
-    divider: {
-      backgroundColor: theme.colors.secondary,
-      marginVertical: 8,
-    },
-    checkInOutTimes: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-    },
-  });
+const styles = StyleSheet.create({
+  card: {
+    marginBottom: 24,
+  },
+  checkInOutTimes: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+});

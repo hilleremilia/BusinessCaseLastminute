@@ -50,6 +50,9 @@ export const theme = {
     ...DefaultTheme.fonts,
     ...fontConfig,
   },
+  divider: {
+    marginVertical: 8,
+  },
 };
 
 export type Theme = typeof theme;
