@@ -50,13 +50,13 @@ yarn android
 
 For iOS, remember to install CocoaPods dependencies.
 
-The first time you run a new project, run the Ruby bundler to install CocoaPods itself:
+The first time you run React Native project, run the Ruby bundler to install CocoaPods itself:
 
 ```sh
 bundle install
 ```
 
-Then, and every time you update your native dependencies, run:
+Then:
 
 ```sh
 bundle exec pod install
