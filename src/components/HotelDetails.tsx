@@ -37,9 +37,7 @@ export const HotelDetails = ({ hotel }: Props) => {
           </View>
         </Card.Content>
         <Divider style={theme.divider} />
-        <Card.Content style={styles.checkInOutTimes}>
-          <Gallery gallery={hotel?.gallery ?? []} />
-        </Card.Content>
+        <Gallery gallery={hotel?.gallery} />
       </Surface>
     </SafeAreaView>
   );
