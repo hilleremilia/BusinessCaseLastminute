@@ -3,12 +3,12 @@ import React from 'react';
 import { Text } from 'react-native-paper';
 
 interface Props {
-  width: number;
+  size: number;
 }
 
-export const ImagePlaceholder = ({ width }: Props) => {
+export const ImagePlaceholder = ({ size }: Props) => {
   return (
-    <View style={[styles.container, { width: width, height: width }]}>
+    <View style={[styles.container, { width: size, height: size }]}>
       <Text variant="bodyMedium">Image not found</Text>
     </View>
   );

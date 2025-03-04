@@ -56,7 +56,7 @@ export const Gallery = ({ gallery = [] }: Props) => {
         onProgressChange={handleProgressChange}
         renderItem={({ item, index }) =>
           errors[index] ? (
-            <ImagePlaceholder width={width} />
+            <ImagePlaceholder size={width} />
           ) : (
             <Image
               source={{ uri: item }}
