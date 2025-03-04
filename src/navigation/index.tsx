@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { HomeScreen } from '../screens/HomeScreen.tsx';
 import { DetailsScreen } from '../screens/DetailsScreen.tsx';
 import { Hotel } from '../types/hotel.ts';
+import { theme } from '../config/theme.ts';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -19,7 +20,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export const Navigation = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={theme}>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Details" component={DetailsScreen} />
