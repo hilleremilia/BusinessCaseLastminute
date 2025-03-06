@@ -20,7 +20,7 @@ export const useData = (
       return filteredHotels;
     }
 
-    return filteredHotels.sort((a, b) => {
+    return [...filteredHotels].sort((a, b) => {
       const nameA = a.name?.toLowerCase() ?? '';
       const nameB = b.name?.toLowerCase() ?? '';
 
