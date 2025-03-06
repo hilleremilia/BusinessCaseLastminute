@@ -85,7 +85,7 @@ export const Filters = ({
               testID="min-price-slider"
               minimumValue={minRange}
               maximumValue={maxPrice}
-              step={50}
+              step={10}
               value={minPrice}
               onValueChange={onMinPriceChange}
               minimumTrackTintColor={theme.colors.primary}
@@ -94,9 +94,9 @@ export const Filters = ({
             <Text>Max Price: {maxPrice}</Text>
             <Slider
               testID="max-price-slider"
-              minimumValue={minRange}
+              minimumValue={minPrice}
               maximumValue={maxRange}
-              step={50}
+              step={10}
               value={maxPrice}
               onValueChange={onMaxPriceChange}
               minimumTrackTintColor={theme.colors.primary}
