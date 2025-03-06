@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const Gallery = ({ gallery = [] }: Props) => {
-  const [error, setError] = React.useState(true);
+  const [error, setError] = React.useState(false);
 
   const onDismissSnackBar = () => setError(false);
 
