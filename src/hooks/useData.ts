@@ -15,7 +15,7 @@ export const useData = (
     [data, minPrice, maxPrice]
   );
 
-  const sortedHotels = useMemo(() => {
+  return useMemo(() => {
     if (sortOrder === 'none') {
       return filteredHotels;
     }
@@ -27,6 +27,4 @@ export const useData = (
       return sortOrder === 'asc' ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
     });
   }, [filteredHotels, sortOrder]);
-
-  return sortedHotels;
 };
