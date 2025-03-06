@@ -1,17 +1,7 @@
-import {
-  Button,
-  Card,
-  Chip,
-  Divider,
-  IconButton,
-  Modal,
-  Portal,
-  Text,
-  useTheme,
-} from 'react-native-paper';
+import { Button, Card, Divider, Text, useTheme } from 'react-native-paper';
 import React from 'react';
 import { Theme } from '../config/theme.ts';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Slider from '@react-native-community/slider';
 import { SortOrder } from '../types/common.ts';
 
