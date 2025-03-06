@@ -7,11 +7,12 @@ import { Hotel } from '../../types/hotel.ts';
 import { Theme } from '../../config/theme.ts';
 import { useData } from '../../hooks/useData.ts';
 import { Filters, maxRange, minRange } from '../Filters.tsx';
+import { SortOrder } from '../../types/common.ts';
 
 export const HotelsList = () => {
   const [minPrice, setMinPrice] = useState(minRange);
   const [maxPrice, setMaxPrice] = useState(maxRange);
-  const [sortOrder, setSortOrder] = useState<'asc' | 'desc' | 'none'>('none'); // Sorting state
+  const [sortOrder, setSortOrder] = useState<SortOrder>('none');
 
   const { data, isLoading, isError } = useAppQuery<Hotel[]>('hotel.json');
   const hotels = useData(minPrice, maxPrice, sortOrder, data);
