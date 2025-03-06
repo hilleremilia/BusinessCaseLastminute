@@ -10,6 +10,8 @@ It contains 2 screens.
 - Full address with city and coordinates
 - Price per night with currency
 
+Results can be filtered by price and sorted by name.
+
 ## The Details screen contains
 - Email address and phone number
 - Check-in and check-out times
