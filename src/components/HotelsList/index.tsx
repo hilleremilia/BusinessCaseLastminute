@@ -75,6 +75,6 @@ const makeStyles = (theme: Theme) =>
     },
     flatListContainer: {
       paddingTop: 24,
-      paddingBottom: 60,
+      paddingBottom: 240,
     },
   });

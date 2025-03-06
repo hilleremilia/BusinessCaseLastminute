@@ -41,77 +41,50 @@ export const Filters = ({
   maxPrice,
   sortOrder,
 }: Props) => {
-  const [visible, setVisible] = React.useState(false);
-
-  const showModal = () => setVisible(true);
-  const hideModal = () => setVisible(false);
-
   const theme = useTheme<Theme>();
   const styles = makeStyles(theme);
-
-  const getSortLabel = () =>
-    sortOrder === 'none' ? sortLabels.none : sortOrder === 'asc' ? sortLabels.asc : sortLabels.desc;
-
-  const allItems = [
-    { label: 'Price from', value: minPrice },
-    { label: 'Price to', value: maxPrice },
-    { label: 'Sort', value: getSortLabel() },
-  ];
 
   return (
     <>
       <Card style={styles.card}>
-        <Card.Content style={styles.filtersContainer}>
-          <View style={styles.filtersPreview}>
-            {allItems.map((item) => (
-              <View key={item.label} style={styles.filterItem}>
-                <Text style={styles.filterLabel}>{item.label}</Text>
-                <Chip selectedColor={theme.colors.textSecondary} style={styles.chip}>
-                  {item.value}
-                </Chip>
-              </View>
-            ))}
-          </View>
+        <Card.Title title="Filters" />
+        <Card.Content>
+          <Text>Min Price: {minPrice}</Text>
+          <Slider
+            testID="min-price-slider"
+            minimumValue={minRange}
+            maximumValue={maxPrice}
+            step={10}
+            value={minPrice}
+            onValueChange={onMinPriceChange}
+            minimumTrackTintColor={theme.colors.primary}
+          />
 
-          <IconButton onPress={showModal} iconColor={theme.colors.primary} icon="filter" />
+          <Text>Max Price: {maxPrice}</Text>
+          <Slider
+            testID="max-price-slider"
+            minimumValue={minPrice}
+            maximumValue={maxRange}
+            step={10}
+            value={maxPrice}
+            onValueChange={onMaxPriceChange}
+            minimumTrackTintColor={theme.colors.primary}
+          />
+        </Card.Content>
+        <Divider />
+
+        <Card.Title title="Sort" />
+        <Card.Content>
+          <Button testID="sort-button" mode="contained" onPress={onSort}>
+            Sort:{' '}
+            {sortOrder === 'none'
+              ? sortLabels.none
+              : sortOrder === 'asc'
+                ? sortLabels.asc
+                : sortLabels.desc}
+          </Button>
         </Card.Content>
       </Card>
-      <Portal>
-        <Modal visible={visible} style={styles.modal} onDismiss={hideModal}>
-          <Card.Title title="Filters" />
-          <Card.Content>
-            <Text>Min Price: {minPrice}</Text>
-            <Slider
-              testID="min-price-slider"
-              minimumValue={minRange}
-              maximumValue={maxPrice}
-              step={10}
-              value={minPrice}
-              onValueChange={onMinPriceChange}
-              minimumTrackTintColor={theme.colors.primary}
-            />
-
-            <Text>Max Price: {maxPrice}</Text>
-            <Slider
-              testID="max-price-slider"
-              minimumValue={minPrice}
-              maximumValue={maxRange}
-              step={10}
-              value={maxPrice}
-              onValueChange={onMaxPriceChange}
-              minimumTrackTintColor={theme.colors.primary}
-            />
-          </Card.Content>
-          <Divider />
-
-          <Card.Title title="Sort" />
-          <Card.Content>
-            <Button testID="sort-button" mode="contained" onPress={onSort}>
-              Sort: {getSortLabel()}
-            </Button>
-          </Card.Content>
-        </Modal>
-      </Portal>
     </>
   );
 };
